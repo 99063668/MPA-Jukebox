@@ -17,27 +17,19 @@ class GenreSeeder extends Seeder
       //5 muziek genres
         $data = [
           [
-            
-            'name' => 'pop',
-            'description' => 'pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziek'            
+            'name' => 'hiphop'
           ],
           [
-            'name' => 'rock',
-            'description' => 'rock is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziek'            
+            'name' => 'rap'
           ],
           [
-            'name' => 'metal',
-            'description' => 'metal is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziek
-            stijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziek'
+            'name' => 'edm'
           ],
           [
-            'name' => 'hiphop',
-            'description' => 'hiphop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziek'
+            'name' => 'dance'
           ],
           [
-            'name' => 'dance',
-            'description' => 'dance is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair m
-            kiekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziekstijlen uit de jaren \'60, \'70, \'80 en \'90 bevat. Pop is een populair muziekstijl die de meest populaire muziek'
+            'name' => 'rock'
           ]
       ];
     

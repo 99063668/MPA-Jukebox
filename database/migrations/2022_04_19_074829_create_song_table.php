@@ -6,16 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateSongTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('song', function (Blueprint $table) {
+        Schema::create('songs', function (Blueprint $table) {
             $table->id();
+            $table->string('song');
+            $table->string('album');
+            $table->string('artist');
+            $table->time('duration');
+            $table->bigInteger('genreId')->unsigned();
             $table->timestamps();
+
+            $table->foreign('genreId')->references('id')->on('genres');  
         });
     }
 

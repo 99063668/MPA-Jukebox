@@ -5,7 +5,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +13,13 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <h1>Genre</h1>
+                    <a href="{{ route('genre.show', 1) }}">Hiphop</a>
+                    <a href="{{ route('genre.show', 2) }}">Rap</a>
+                    <a href="{{ route('genre.show', 3) }}">Edm</a>
+                    <a href="{{ route('genre.show', 4) }}">Dance</a>
+                    <a href="{{ route('genre.show', 5) }}">Rock</a>
+                    
                 </div>
             </div>
         </div>
