@@ -12,7 +12,7 @@ class GenreController extends Controller {
 
     public function show($id) {
         $genre = Genre::where('id', $id)->first();
-        return view('genre.genre', [
+        return view('song.genre', [
             'id' => $id,
             'genre' => $genre
         ]);

@@ -33,11 +33,8 @@ Route::get('/genre', [GenreController::class, 'index'])->name('genre.index');
 Route::get('/genre/{id}', [GenreController::class, 'show'])->name('genre.show');
 
 // Song
-Route::get('/song', [SongController::class, 'index'])->name('song.index');
+Route::get('/song/genre/{id}', [SongController::class, 'overview'])->name('song.index');
 Route::get('/song/{id}', [SongController::class, 'show'])->name('song.show');
-
-// Detail
-Route::get('/detail/{id}', [DetailController::class, 'show'])->name('detail.show');
 
 // Fallback
 // Route::fallback(FallbackController::class);

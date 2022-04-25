@@ -11,12 +11,20 @@ class SongController extends Controller {
         return view('genre');
     }
 
-    public function show($id) {
-        $genre = Genre::find($id);
-        $songs = Song::where('genreId', $id)->get();
-        return view('genre.genre', [
+    public function overview($genre_id) {
+        $genre = Genre::find($genre_id);
+        $songs = Song::where('genre_id', $genre_id)->get();
+        return view('song.genre', [
             'genre' => $genre,
             'songs' => $songs
+        ]);
+    }
+
+    public function show($id) {
+        $song = Song::find($id);
+        return view('song.detail', [
+            'id' => $id,
+            'song' => $song
         ]);
     }
 }
