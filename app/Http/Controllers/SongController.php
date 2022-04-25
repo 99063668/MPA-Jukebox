@@ -1,18 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Song;
 
+use App\Models\Genre;
+use App\Models\Song;
 use Illuminate\Http\Request;
 
-class SongController extends Controller
-{
-    public function show($id)
-    {
-        $song = Song::where('genreId', $id)->first();
+class SongController extends Controller {
+    public function index() {
+        return view('genre');
+    }
+
+    public function show($id) {
+        $genre = Genre::find($id);
+        $songs = Song::where('genreId', $id)->get();
         return view('genre.genre', [
-            'id' => $id,
-            'song' => $song
+            'genre' => $genre,
+            'songs' => $songs
         ]);
     }
 }

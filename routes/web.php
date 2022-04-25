@@ -3,6 +3,7 @@
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SongController;
+use App\Http\Controllers\DetailController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,18 +18,26 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+// Login
 Route::get('/', function (){
     return view('auth/login');
 });
 
 Auth::routes();
 
+// Home
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/genre', [GenreController::class, 'index'])->name('genre.index');
 
+// Genre
+Route::get('/genre', [GenreController::class, 'index'])->name('genre.index');
 Route::get('/genre/{id}', [GenreController::class, 'show'])->name('genre.show');
 
+// Song
+Route::get('/song', [SongController::class, 'index'])->name('song.index');
 Route::get('/song/{id}', [SongController::class, 'show'])->name('song.show');
 
-//fallback route
+// Detail
+Route::get('/detail/{id}', [DetailController::class, 'show'])->name('detail.show');
+
+// Fallback
 // Route::fallback(FallbackController::class);

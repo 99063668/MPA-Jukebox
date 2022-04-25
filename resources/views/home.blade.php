@@ -14,11 +14,11 @@
                     @endif
 
                     <h1>Genre</h1>
-                    <a href="{{ route('genre.show', 1) }}">Hiphop</a>
-                    <a href="{{ route('genre.show', 2) }}">Rap</a>
-                    <a href="{{ route('genre.show', 3) }}">Edm</a>
-                    <a href="{{ route('genre.show', 4) }}">Dance</a>
-                    <a href="{{ route('genre.show', 5) }}">Rock</a>
+                    <a href="{{ route('song.show', 1) }}">Hiphop</a>
+                    <a href="{{ route('song.show', 2) }}">Rap</a>
+                    <a href="{{ route('song.show', 3) }}">Edm</a>
+                    <a href="{{ route('song.show', 4) }}">Dance</a>
+                    <a href="{{ route('song.show', 5) }}">Rock</a>
                     
                 </div>
             </div>

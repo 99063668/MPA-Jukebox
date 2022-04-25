@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-  <h1><?php echo($genre->name); ?></h1>
+<a href="{{ route('home') }}">Back</a>
+  <h1>{{$genre->name}}</h1>
 
   <table class="table">
     <thead>
@@ -10,17 +11,20 @@
         <th scope="col">Album</th>
         <th scope="col">Artist</th>
         <th scope="col">Duration</th>
+        {{-- <th scope="col">Genre</th> --}}
       </tr>
     </thead>
     <tbody>
-      <?php for ($i = 0; $i != null; $i++){ ?>
+      @foreach ($songs as $song)
         <tr>
-          <td><?php echo($song[$i]->name); ?></td>
-          <td><?php echo($song[$i]->album); ?></td>
-          <td><?php echo($song[$i]->artist); ?></td>
-          <td><?php echo($song[$i]->duration); ?></td>
+          <td><a href="{{ route('detail.show', 1) }}">{{$song->song}}</a></td>
+          <td>{{$song->album}}</td>
+          <td>{{$song->artist}}</td>
+          <td>{{$song->duration}}</td>
+          {{-- <td>{{$song->genre}}</td> --}}
         </tr>
-      <?php } ?>
+        {{-- <? var_dump($song->genre); ?> --}}
+      @endforeach
     </tbody>
   </table>
 @endsection
