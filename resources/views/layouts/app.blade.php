@@ -33,6 +33,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+
                     <ul class="navbar-nav me-auto">
 
                     </ul>
@@ -53,15 +54,36 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+
+                            @if (Route::has('home'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('home') }}">Genre</a> 
+                                </li>
+                            @endif
+
+                            @if (Route::has('playlist'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('playlist') }}">Playlist</a>
+                                </li>
+                            @endif
+
+                            <li class="nav-item">
+                                <a class="nav-link"  href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                        
+                            {{-- <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -69,7 +91,7 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+                            </li> --}}
                         @endguest
                     </ul>
                 </div>

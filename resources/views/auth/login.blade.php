@@ -64,6 +64,7 @@
                                 @endif
                             </div>
                         </div>
+                        {{-- <a class="btn btn-link" href="{{ route('auth.register') }}"> --}}
                     </form>
                 </div>
             </div>

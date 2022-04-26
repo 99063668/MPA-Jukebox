@@ -2,7 +2,6 @@
 
 @section('content')
 <a href="{{ route('home') }}">Back</a>
-  <h1>{{$genre->name}}</h1>
 
   <table class="table">
     <thead>
@@ -12,6 +11,7 @@
         <th scope="col">Artist</th>
         <th scope="col">Duration</th>
         <th scope="col">Genre</th>
+        <th scope="col">Add to playlist</th>
       </tr>
     </thead>
     <tbody>
@@ -22,6 +22,7 @@
           <td>{{$song->artist}}</td>
           <td>{{$song->duration}}</td>
           <td>{{$song->genre->name}}</td>
+          <td><input type="checkbox" id="add" name="add" style="width: 100px;"></td>
         </tr>
       @endforeach
     </tbody>
