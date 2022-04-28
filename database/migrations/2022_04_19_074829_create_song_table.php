@@ -15,6 +15,7 @@ class CreateSongTable extends Migration
             $table->string('artist');
             $table->time('duration');
             $table->string('year');
+            $table->string('audio');
             $table->bigInteger('genre_id')->unsigned();
             $table->timestamps();
 

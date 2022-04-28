@@ -17,6 +17,7 @@ class SongSeeder extends Seeder
             'artist' => 'Logic ft Eminem',
             'duration' => 405,
             'year' => 2019,
+            'audio' => 'Homicide.mp3',
             'genre_id' => Genre::where('name', 'rap')->get()->first()->id
           ],
           [
@@ -25,6 +26,7 @@ class SongSeeder extends Seeder
             'artist' => 'Eminem',
             'duration' => 410,
             'year' => 2004,
+            'audio' => 'Mockingbird.mp3',
             'genre_id' => Genre::where('name', 'rap')->get()->first()->id
           ],
           [
@@ -33,6 +35,7 @@ class SongSeeder extends Seeder
             'artist' => 'Martin Garrix ft Khalid',
             'duration' => 336,
             'year' => 2019,
+            'audio' => 'Ocean.mp3',
             'genre_id' => Genre::where('name', 'house')->get()->first()->id
           ],
           [
@@ -41,6 +44,7 @@ class SongSeeder extends Seeder
             'artist' => 'Don Diablo',
             'duration' => 249,
             'year' => 2021,
+            'audio' => 'Bad.mp3',
             'genre_id' => Genre::where('name', 'house')->get()->first()->id
           ],
           [
@@ -49,6 +53,7 @@ class SongSeeder extends Seeder
             'artist' => 'Angerfist',
             'duration' => 402,
             'year' => 2014,
+            'audio' => 'Knock_Knock.mp3',
             'genre_id' => Genre::where('name', 'hardcore')->get()->first()->id
           ],
           [
@@ -57,6 +62,7 @@ class SongSeeder extends Seeder
             'artist' => 'Dr. Peacock',
             'duration' => 403,
             'year' => 2016,
+            'audio' => 'Trip_To_Ireland.mp3',
             'genre_id' => Genre::where('name', 'hardcore')->get()->first()->id
           ],
           [
@@ -65,6 +71,7 @@ class SongSeeder extends Seeder
             'artist' => 'Drake',
             'duration' => 318,
             'year' => 2018,
+            'audio' => 'Gods_Plan.mp3',
             'genre_id' => Genre::where('name', 'hiphop')->get()->first()->id
           ],
           [
@@ -73,6 +80,7 @@ class SongSeeder extends Seeder
             'artist' => 'Dr. Dre ft Snoop Dogg',
             'duration' => 430,
             'year' => 1999,
+            'audio' => 'Still_DRE.mp3',
             'genre_id' => Genre::where('name', 'hiphop')->get()->first()->id
           ],
           [
@@ -81,6 +89,7 @@ class SongSeeder extends Seeder
             'artist' => 'Rammstein',
             'duration' => 522,
             'year' => 2018,
+            'audio' => 'Deutschland.mp3',
             'genre_id' => Genre::where('name', 'metal')->get()->first()->id
           ],
           [
@@ -89,6 +98,7 @@ class SongSeeder extends Seeder
             'artist' => 'Sabaton',
             'duration' => 326,
             'year' => 2014,
+            'audio' => 'To_Hell_And_Back.mp3',
             'genre_id' => Genre::where('name', 'metal')->get()->first()->id
           ]
       ];
