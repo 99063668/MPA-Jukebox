@@ -18,6 +18,10 @@ class PlaylistSongSeeder extends Seeder
             [
                 'song_id' => 2,
                 'playlist_id' => 1,
+            ],
+            [
+                'song_id' => 3,
+                'playlist_id' => 1,
             ]
         ];
        

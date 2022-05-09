@@ -25,32 +25,33 @@
             <td>{{$song->genre->name}}</td>
             <td>
               <audio controls>
-                <source src="{{ URL::asset('assets/audio/')}}/{{$song->audio}}" type="audio/mpeg"> 
+                <source src="{{URL::asset('assets/audio/')}}/{{$song->audio}}" type="audio/mpeg"> 
               </audio>
             </td>
             <form action="{{ route('song.selectSong') }}" method="post">
-                @csrf 
-                <td><input type="checkbox" id="checkbox" name="song_id" value="{{$song->id}}" onclick="event.preventDefault();this.form.submit();" style="width: 100px;"></td>
+              @csrf 
+              <td><input type="checkbox" id="checkbox" name="song_id[]" value="{{$song->id}}" onclick="{{ route('song.show', $song->id) }}" style="width: 100px;"></td>
             </form>
           </tr>
         @endforeach
-
+        
       @if (count($songs) == 0)
         <tr>
-          <td colspan="6">No songs found</td>
+          <td colspan="6">No songs found for this genre</td>
         </tr>
       @endif
     </tbody>
   </table>
 
-  @if (Session::has('Playlist') && Session::get('Playlist') !== null && count(Session::get('Playlist')) > 0)
-    <a href="{{ route('playlist.addSelected', $playlists->id) }}">Toevoegen aan playlist</a>
+  @if (Session::has('Playlist') && $count == true)
+    <p>test</p>
+    <a href="{{ route('playlist.addSelected', $playlist->playlist) }}">Add music to playlist</a>
   @endif
-
 @endsection
 
 {{-- 
   1. popup voor toevoegen song aan playlist
   2. song in playlist zetten
-  3. playlist tonen + songs afspelen
+  3. playlist info tonen
+  4. song uit playlist verwijderen
 --}}

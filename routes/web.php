@@ -19,10 +19,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // Login
-Route::get('/', function (){
-    return view('auth/login');
-});
-
+Route::get('/', function (){ return view('auth/login'); });
 Auth::routes();
 
 // Home
@@ -40,7 +37,7 @@ Route::post('/song/selected', [SongController::class, 'selectSong'])->name('song
 //Playlist
 Route::get('/playlist', [PlaylistController::class, 'index'])->name('playlist.index');
 Route::get('/playlist/{id}', [PlaylistController::class, 'show'])->name('playlist.show');
-Route::get('/playlist/add/{id}', [SongController::class, 'addSelected'])->name('playlist.addSelected');
+Route::get('/playlist/add/{id}', [PlaylistController::class, 'addSelected'])->name('playlist.addSelected');
 
 // Fallback
 // Route::fallback(FallbackController::class);

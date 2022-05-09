@@ -46,6 +46,6 @@ class SongController extends Controller {
             Session::put('Playlist', $playlist);
         } 
         Session::save();
-        return  redirect()->back();
+        return redirect()->back();
     }
 }

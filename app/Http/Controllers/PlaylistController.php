@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Playlist;
+use App\Models\Song;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -15,10 +16,10 @@ class PlaylistController extends Controller
     }
 
     public function show($id) {
-        $playlist = Playlist::find($id);
-        return view('playlist.playlist', [
+        $playlists = Playlist::find($id);
+        return view('playlist.playlistDetail', [
             'id' => $id,
-            'playlist' => $playlist
+            'playlist_song' => $playlists
         ]);
     }
 
@@ -28,8 +29,8 @@ class PlaylistController extends Controller
         $playlist->songs()->sync($song_id);
         Session::save();
 
-        $playlist = new Playlist();
-        Session::forget('Playlist');
+        // $playlist = new Playlist();
+        // Session::forget('Playlist');
         return redirect()->back();
     }
 }
