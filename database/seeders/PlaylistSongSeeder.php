@@ -33,17 +33,17 @@ class PlaylistSongSeeder extends Seeder
         // }
 
 
-        songs(Song::class, 20)->create();
+        // songs(Song::class, 20)->create();
 
-        songs(Playlist::class, 50)->create();
+        // songs(Playlist::class, 50)->create();
 
-        $roles = PlaylistSong::all();
+        // $roles = PlaylistSong::all();
 
     
-        PlaylistSong::all()->each(function ($user) use ($roles) { 
-            $user->roles()->attach(
-                $roles->random(rand(1, 3))->pluck('id')->toArray()
-            ); 
-        });
+        // PlaylistSong::all()->each(function ($user) use ($roles) { 
+        //     $user->roles()->attach(
+        //         $roles->random(rand(1, 3))->pluck('id')->toArray()
+        //     ); 
+        // });
     }
 }

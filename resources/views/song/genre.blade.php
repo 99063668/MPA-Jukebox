@@ -52,4 +52,5 @@
   1. seeder voor detail pagina playlist
   2. playlist aanmaken
   3. kiezen in welke playlist nummer moet worden toegevoegd
+  4. checkbox laten staan bij refresh
 --}}

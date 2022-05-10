@@ -19,35 +19,22 @@ class PlaylistController extends Controller
 
     public function overview($id) {
         $playlists = Playlist::find($id);
-        // $songs = PlaylistSong::where('playlist_id', $id)->get();
 
+        if ($playlists == null) {
+            return redirect()->route('playlist.index');
+        }
         $songDetail = $playlists->songs()->get();
-
-        //SELECT songs.id, playlist_songs.song_id 
-        //FROM songs 
-        //INNER JOIN playlist_songs 
-        //ON songs.id = playlist_songs.song_id = 1;
-
-        // $songDetail = DB::table('songs')
-        // ->select('songs.id', 'playlist_songs.song_id')
-        // ->join('playlist_songs', 'songs.id', '=', 'playlist_songs.song_id')
-        // ->where('songs.id', '=', $id)
-        // ->where('songs.id', 'where playlist_songs.song_id =', $id)
-        // ->get();
 
         return view('playlist.playlistDetail', [
             'id' => $id,
             'playlist' => $playlists,
-            // 'songs' => $songs,
             'songDetail' => $songDetail
         ]);
     }
 
     public function create() {
-        // if () {
-            return view('playlist.playlistCreate');
-        // }
-        // return view('playlist.playlist');
+        var_dump('create');
+        // return view('playlist.create', []);
     }
 
     public function addSelected($playlist_id) {

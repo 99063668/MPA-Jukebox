@@ -32,13 +32,15 @@ Route::get('/genre', [GenreController::class, 'index'])->name('genre.index');
 // Song
 Route::get('/song/genre/{id}', [SongController::class, 'overview'])->name('song.index');
 Route::get('/song/{id}', [SongController::class, 'show'])->name('song.show');
-Route::post('/song/selected', [SongController::class, 'selectSong'])->name('song.selectSong');
+Route::post('/song/selected/', [SongController::class, 'selectSong'])->name('song.selectSong');
 
 //Playlist
-Route::get('/playlist', [PlaylistController::class, 'index'])->name('playlist.index');
-Route::get('/playlist/{id}', [PlaylistController::class, 'overview'])->name('playlist.overview');
-Route::get('/playlist/add/{id}', [PlaylistController::class, 'addSelected'])->name('playlist.addSelected');
-Route::get('/playlist/create', [PlaylistController::class, 'create'])->name('playlist.create');
+Route::prefix('/playlist')->group(function () {
+  Route::get('/', [PlaylistController::class, 'index'])->name('playlist.index');
+  Route::get('/{id}', [PlaylistController::class, 'overview'])->whereNumber('id')->name('playlist.overview');
+  Route::get('/add/{id}', [PlaylistController::class, 'addSelected'])->whereNumber('id')->name('playlist.addSelected');
+  Route::get('/create/', [PlaylistController::class, 'create'])->name('playlist.create');
+});
 
 // Fallback
 // Route::fallback(FallbackController::class);
