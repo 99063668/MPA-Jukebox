@@ -28,9 +28,9 @@
                 <source src="{{URL::asset('assets/audio/')}}/{{$song->audio}}" type="audio/mpeg"> 
               </audio>
             </td>
-            <form action="{{ route('song.selectSong') }}" method="post">
+            <form action="{{ route('song.selectSong') }}" method="POST">
               @csrf 
-              <td><input type="checkbox" id="checkbox" name="song_id[]" value="{{$song->id}}" onclick="{{ route('song.show', $song->id) }}" style="width: 100px;"></td>
+              <td><input type="checkbox" id="checkbox" name="song_id" value="{{$song->id}}" onclick="event.preventDefault(); this.form.submit();" style="width: 100px;"></td>
             </form>
           </tr>
         @endforeach
@@ -43,15 +43,13 @@
     </tbody>
   </table>
 
-  @if (Session::has('Playlist') && $count == true)
-    <p>test</p>
-    <a href="{{ route('playlist.addSelected', $playlist->playlist) }}">Add music to playlist</a>
+  @if ($hasSongs)
+    <a href="{{ route('playlist.addSelected', $playlist->id) }}">Add music to playlist</a>
   @endif
 @endsection
 
 {{-- 
-  1. popup voor toevoegen song aan playlist
-  2. song in playlist zetten
-  3. playlist info tonen
-  4. song uit playlist verwijderen
+  1. seeder voor detail pagina playlist
+  2. playlist aanmaken
+  3. kiezen in welke playlist nummer moet worden toegevoegd
 --}}

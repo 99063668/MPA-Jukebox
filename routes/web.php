@@ -27,7 +27,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // Genre
 Route::get('/genre', [GenreController::class, 'index'])->name('genre.index');
-Route::get('/genre/{id}', [GenreController::class, 'show'])->name('genre.show');
+// Route::get('/genre/{id}', [GenreController::class, 'show'])->name('genre.show');
 
 // Song
 Route::get('/song/genre/{id}', [SongController::class, 'overview'])->name('song.index');
@@ -36,8 +36,9 @@ Route::post('/song/selected', [SongController::class, 'selectSong'])->name('song
 
 //Playlist
 Route::get('/playlist', [PlaylistController::class, 'index'])->name('playlist.index');
-Route::get('/playlist/{id}', [PlaylistController::class, 'show'])->name('playlist.show');
+Route::get('/playlist/{id}', [PlaylistController::class, 'overview'])->name('playlist.overview');
 Route::get('/playlist/add/{id}', [PlaylistController::class, 'addSelected'])->name('playlist.addSelected');
+Route::get('/playlist/create', [PlaylistController::class, 'create'])->name('playlist.create');
 
 // Fallback
 // Route::fallback(FallbackController::class);

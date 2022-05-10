@@ -13,7 +13,7 @@ class CreatePlaylistSongTable extends Migration
      */
     public function up()
     {
-        Schema::create('playlist_songs', function (Blueprint $table) {
+        Schema::create('playlist_song', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('song_id')->unsigned();
             $table->bigInteger('playlist_id')->unsigned();
@@ -31,6 +31,6 @@ class CreatePlaylistSongTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('playlist_songs');
+        Schema::dropIfExists('playlist_song');
     }
 }

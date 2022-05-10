@@ -1,10 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-  <h3>Playlist</h3>
-    @foreach ($playlists as $playlist)
+  <a href="{{ route('playlist.create') }}">New playlist</a>
+
+  <table class="table">
+    <thead>
       <tr>
-        <td><a href="{{ route('playlist.show', $playlist->id) }}">{{$playlist->name}}</a></td>
+        <th scope="col">Playlist</th>
       </tr>
-    @endforeach
+    </thead>
+    <tbody>
+      @foreach ($playlists as $playlist)
+      <tr>
+        <td><a href="{{ route('playlist.overview', $playlist->id) }}">{{$playlist->name}}</a></td>
+      </tr>
+      @endforeach
+        
+      @if (count($playlists) == 0)
+        <tr>
+          <td colspan="6">No playlists found</td>
+        </tr>
+      @endif
+    </tbody>
+  </table>
 @endsection

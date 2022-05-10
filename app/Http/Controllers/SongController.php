@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Genre;
+use App\Models\Playlist;
 use App\Models\Song;
+use App\Models\SongSession;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SongController extends Controller {
     public function index() {
@@ -13,11 +16,15 @@ class SongController extends Controller {
     }
 
     public function overview($genre_id) {
+        $playlist = Playlist::where('name', 'Test playlist')->where('user_id', auth()->id())->first();
         $genre = Genre::find($genre_id);
         $songs = Song::where('genre_id', $genre_id)->get();
+        $hasSongs = SongSession::hasSongs();
         return view('song.genre', [
+            'playlist' => $playlist,
             'genre' => $genre,
-            'songs' => $songs
+            'songs' => $songs,
+            'hasSongs' => $hasSongs
         ]);
     }
 
@@ -30,6 +37,14 @@ class SongController extends Controller {
     }
 
     public function selectSong(Request $request) {
+        $validator= Validator::make($request->all(), [
+            'song_id' => 'required|integer|exists:songs,id'
+        ]);
+
+        //vlidation fails
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
         $song_id = $request->input('song_id');
 
         if (Session::has('Playlist')) {
