@@ -15,12 +15,20 @@ class SongController extends Controller {
         return view('genre');
     }
 
-    public function overview($genre_id) {
+    // overview voor pagina + data voor playlist
+    public function overview($genre_id, Request $request) {
+        $playlists = Playlist::all();
+
+        // $value = $request->choosePlaylist;
+        // $playlist = Playlist::where('name', $value)->where('user_id', auth()->id())->first();
+        // var_dump($value);
+
         $playlist = Playlist::where('name', 'Test playlist')->where('user_id', auth()->id())->first();
         $genre = Genre::find($genre_id);
         $songs = Song::where('genre_id', $genre_id)->get();
         $hasSongs = SongSession::hasSongs();
         return view('song.genre', [
+            'playlists' => $playlists,
             'playlist' => $playlist,
             'genre' => $genre,
             'songs' => $songs,
@@ -36,12 +44,12 @@ class SongController extends Controller {
         ]);
     }
 
+    // controleren welk lied geselecteerd is
     public function selectSong(Request $request) {
         $validator= Validator::make($request->all(), [
             'song_id' => 'required|integer|exists:songs,id'
         ]);
 
-        //vlidation fails
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator);
         }

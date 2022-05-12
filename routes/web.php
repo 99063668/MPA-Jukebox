@@ -35,7 +35,7 @@ Route::prefix('song')->group(function () {
   Route::post('/selected/', [SongController::class, 'selectSong'])->name('song.selectSong');
 });
 
-//Playlist
+// Playlist
 Route::prefix('/playlist')->group(function () {
   Route::get('/', [PlaylistController::class, 'index'])->name('playlist.index');
   Route::get('/{id}', [PlaylistController::class, 'overview'])->whereNumber('id')->name('playlist.overview');
@@ -44,6 +44,3 @@ Route::prefix('/playlist')->group(function () {
   Route::post('/save/', [PlaylistController::class, 'save'])->name('playlist.save');
   Route::post('/choosen/', [PlaylistController::class, 'choosenTitle'])->name('playlist.choosenTitle');
 });
-
-// Fallback
-// Route::fallback(FallbackController::class);

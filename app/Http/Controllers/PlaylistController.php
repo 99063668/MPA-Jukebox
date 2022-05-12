@@ -3,19 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Playlist;
-use App\Models\Song;
-use App\Models\PlaylistSong;
 use App\Models\SongSession;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Symfony\Component\Console\Input\Input;
 
 class PlaylistController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         $playlists = Playlist::all();
         return view('playlist.playlist', ['playlists' => $playlists]);
     }
@@ -35,10 +31,12 @@ class PlaylistController extends Controller
         ]);
     }
 
+    // nieuwe playlist aanmaken
     public function create() {
         return view('playlist.create');
     }
 
+    // opgegeven titel opslaan
     public function save() {
         $hasTitle = SongSession::hasTitle();
         return view('playlist.playlist', [
@@ -46,12 +44,13 @@ class PlaylistController extends Controller
         ]);
     }
 
+    // controleren of er een titel is ingevoerd + titel in sessie stoppen
     public function choosenTitle(Request $request) {
         $validator= Validator::make($request->all(), [
             'title' => 'required'
         ]);
 
-        //validation fails
+        // validation fails
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator);
         }
@@ -65,6 +64,7 @@ class PlaylistController extends Controller
         return redirect()->back();
     }
 
+    // geselecteerde nummers in database toevoegen in de gekozen playlist
     public function addSelected($playlist_id) {
         $song_id = Session::get('Playlist');
         $playlist = Playlist::find($playlist_id);

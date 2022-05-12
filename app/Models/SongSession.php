@@ -26,7 +26,6 @@ class SongSession
         return false;
     }
 
-
     public function initilize() {
         if (!Session::has('Playlist')) {
             Session::put('Playlist', []);

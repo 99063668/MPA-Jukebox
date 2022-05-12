@@ -44,12 +44,12 @@
   </table>
 
   @if ($hasSongs)
+    <select name="choosePlaylist" id="choosePlaylist">
+      @foreach ($playlists as $playlistOption)
+        <option value="playlistOption">{{$playlistOption->name}}</option>
+      @endforeach
+    </select>
+
     <a href="{{ route('playlist.addSelected', $playlist->id) }}">Add music to playlist</a>
   @endif
 @endsection
-
-{{-- 
-  1. playlist aanmaken
-  2. kiezen in welke playlist nummer moet worden toegevoegd
-  3. checkbox laten staan bij refresh
---}}

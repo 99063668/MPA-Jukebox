@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Genre;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -12,6 +11,7 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    // pagina weergeven met data
     public function index()
     {
         $genres = Genre::all();
